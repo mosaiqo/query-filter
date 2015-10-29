@@ -1,0 +1,42 @@
+{
+    "name": "mosaiqo/queryfilter",
+    "description": "This is a fake description change it.",
+    "keywords": [
+        "mosaiqo",
+        "queryfilter"
+    ],
+    "homepage": "https://https://github.com/mosaiqo/queryfilter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boudy de Geer",
+            "email": "boudydegeer@mosaiqo.com",
+            "homepage": "http://boudydegeer.com",
+            "role": "Full Stack Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mosaiqo\\Queryfilter\\": "app"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mosaiqo\\Queryfilter\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
