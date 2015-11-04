@@ -1,9 +1,9 @@
-<?php namespace Mosaiqo\Queryfilter;
+<?php namespace Mosaiqo\QueryFilter;
 
-class Queryfilter
+class QueryFilter
 {
     /**
-     * Create a new Queryfilter Instance
+     * Create a new QueryFilter Instance
      */
     public function __construct()
     {

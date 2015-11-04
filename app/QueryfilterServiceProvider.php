@@ -1,8 +1,8 @@
-<?php namespace Mosaiqo\;
+<?php namespace Mosaiqo\QueryFilter;
 
 use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends ServiceProvider
+class QueryFilterServiceProvider extends ServiceProvider
 {
     /**
      * Perform post-registration booting of services.
