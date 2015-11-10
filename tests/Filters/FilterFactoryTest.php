@@ -10,7 +10,8 @@ class FilterFactoryTest extends \PHPUnit_Framework_TestCase{
 	 */
 	public function it_instantiates_a_class_on_a_given_filter()
 	{
-		$filter = (new FilterFactory('stubFilter', ['one', 'two']))->create();
+
+		$filter = (new FilterFactory('stubFilter', ['one', 'two'], StubFilter::class))->create();
 		$this->assertTrue( $filter instanceof StubFilter);
 		$this->assertEquals($filter->getParams() , ['one', 'two']);
 	}

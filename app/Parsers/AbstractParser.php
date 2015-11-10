@@ -1,4 +1,4 @@
-<?php namespace Mosaiqo\QueryFilter\Parsers;
+<?php namespace Mosaiqo\Parsers;
 
 use Exception;
 use Mosaiqo\QueryFilter\Filters\FilterCollection;
@@ -10,6 +10,7 @@ class AbstractParser
 	 * 
 	 */
 	protected $filters;
+	protected $collection;
 
 	protected $delimiter = ":";
 
@@ -18,9 +19,10 @@ class AbstractParser
 	/**
 	 * 
 	 */
-	public function __construct($filters)
+	public function __construct($filters, FilterCollection $collection)
 	{
 		$this->filters = $filters;
+		$this->collection = $collection;
 	}
 
 	/**
@@ -32,14 +34,12 @@ class AbstractParser
 				$this->normalizeFilters($this->filters)
 		);
 		
-		$parsedFilters = [];
 		foreach ($filters as $filter => $params) 
 		{
-			$parsedFilters[$filter] = new FilterFactory($filter, $params);
+			$this->collections->add( new FilterFactory($filter, $params), $filter );
 		}
-	var_dump(new FilterCollection($parsedFilters));die;	
-		return new FilterCollection($parsedFilters);
-		
+	
+		return $this->collection;	
 	}
 	
 	/**
